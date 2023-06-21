@@ -114,7 +114,7 @@ class _PodProgressBarState extends State<PodProgressBar> {
         padding: widget.podProgressBarConfig.padding,
         child: SizedBox(
           width: size.maxWidth,
-          height: widget.podProgressBarConfig.circleHandlerRadius,
+          height: 30,
           child: Align(
             alignment: widget.alignment,
             child: GetBuilder<PodGetXVideoController>(
@@ -124,6 +124,7 @@ class _PodProgressBarState extends State<PodProgressBar> {
                 painter: _ProgressBarPainter(
                   videoPlayerValue!,
                   podProgressBarConfig: widget.podProgressBarConfig.copyWith(
+                    height: 6,
                     circleHandlerRadius: _podCtr.isOverlayVisible ||
                             widget
                                 .podProgressBarConfig.alwaysVisibleCircleHandler
@@ -131,9 +132,9 @@ class _PodProgressBarState extends State<PodProgressBar> {
                         : 0,
                   ),
                 ),
-                size: Size(
+                size: const Size(
                   double.maxFinite,
-                  widget.podProgressBarConfig.height,
+                  6,
                 ),
               ),
             ),
